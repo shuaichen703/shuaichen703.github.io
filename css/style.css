@@ -1,0 +1,52 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', 'Noto Serif SC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #334155; /* slate-700 */
+}
+
+/* 简单的过渡效果 */
+a, button {
+    transition: all 0.3s ease-in-out;
+}
+
+/* 导航吸顶时的模糊效果 */
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+/* 调整锚点跳转位置，防止被固定的导航栏遮挡 */
+section[id] {
+    scroll-margin-top: 6rem;
+}
+
+/* 渐入动画 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* 隐藏滚动条但保留滚动功能 */
+.hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
