@@ -157,14 +157,14 @@ window.portfolioData = {
                 company: "Li Auto",
                 year: "2026.06 - Present",
                 logo: "images/liauto_64x64.ico",
-                tags: ["Vision Encoder", "Hybrid Architecture", "Edge Inference", "Pre-training"]
+                tags: ["Vision Encoder", "Generative Pre-training", "Edge Inference", "Foundation Model", "AAAI"]
             },
             {
                 role: "AIGC Algorithm Intern",
                 company: "Alibaba - AMap",
                 year: "2026.02 - 2026.06",
                 logo: "images/amap_64x64.ico",
-                tags: ["Qwen3-VL", "Fine-tuning", "Data Construction", "Image Generation"]
+                tags: ["Image Editing", "Autoregressive Generation", "Data Construction", "Image Generation", "AAAI", "IJCV"]
             },
         ],
         publications: [

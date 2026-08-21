@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 获取挂载在 window 上的数据
     const fullData = window.portfolioData;
     
-    // 语言切换逻辑，默认改为英文
-    let currentLang = localStorage.getItem('portfolio_lang') || 'en';
+    // 语言切换逻辑，默认中文
+    let currentLang = localStorage.getItem('portfolio_lang') || 'zh';
     const langToggleBtn = document.getElementById('lang-toggle');
     const langLabel = document.getElementById('lang-label');
 
