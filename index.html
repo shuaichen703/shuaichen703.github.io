@@ -3,191 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 禁止搜索引擎收录与推流 -->
     <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="陈帅的个人学术主页，研究方向包括多模态生成与理解、视频生成和世界模型。">
+    <meta name="theme-color" content="#173f35">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23173f35'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Georgia' font-style='italic' font-size='25' fill='%23f7f5ef'%3ESC%3C/text%3E%3C/svg%3E">
     <title>Shuai Chen | AIGC Researcher</title>
-    <!-- 引入 Tailwind CSS (CDN) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 引入 FontAwesome 图标库 (CDN) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- 引入自定义样式 -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- 引入 Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-100 selection:text-indigo-900 font-sans relative">
-    
-    <!-- 背景装饰：柔和渐变 + 顶部细网格 -->
-    <div class="fixed inset-0 z-[-2] pointer-events-none bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-50 via-slate-50 to-white"></div>
-    <div class="bg-grid fixed inset-0 z-[-1] pointer-events-none"></div>
+<body>
+    <a class="skip-link" href="#main" data-i18n="skip_content">跳至主要内容</a>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
 
-    <!-- 导航栏 -->
-    <nav class="sticky-nav border-b border-slate-200/60 bg-white/80 backdrop-blur-xl">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="flex-shrink-0 font-bold text-xl tracking-tight text-slate-900" id="nav-name">
-                    <!-- 动态注入姓名 -->
+    <header class="site-header" id="site-header">
+        <nav class="nav-shell" aria-label="Primary navigation">
+            <a class="brand" href="#about" aria-label="Shuai Chen — Home">
+                <span class="brand-mark" aria-hidden="true">SC</span>
+                <span class="brand-name" id="nav-name">陈帅</span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Open navigation">
+                <span></span><span></span>
+            </button>
+            <div class="nav-panel" id="nav-panel">
+                <div class="nav-links">
+                    <a href="#about" class="nav-link active" data-i18n="nav_about">关于我</a>
+                    <a href="#education" class="nav-link" data-i18n="nav_education">教育背景</a>
+                    <a href="#experience" class="nav-link" data-i18n="nav_experience">工作经历</a>
+                    <a href="#publications" class="nav-link" data-i18n="nav_publications">学术研究</a>
+                    <a href="#awards" class="nav-link" data-i18n="nav_awards">个人荣誉</a>
                 </div>
-                <div class="hidden sm:block">
-                    <div class="ml-10 flex items-baseline space-x-6">
-                        <a href="#about" class="nav-link text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav_about">关于我</a>
-                        <a href="#education" class="nav-link text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav_education">教育背景</a>
-                        <a href="#experience" class="nav-link text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav_experience">工作经历</a>
-                        <a href="#publications" class="nav-link text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav_publications">论文&专利</a>
-                        <a href="#awards" class="nav-link text-slate-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav_awards">个人荣誉</a>
+                <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch to English">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-globe"></use></svg>
+                    <span id="lang-label">EN</span>
+                </button>
+            </div>
+        </nav>
+        <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+    </header>
+
+    <main class="site-main" id="main">
+        <section id="about" class="hero" aria-labelledby="hero-name">
+            <div class="hero-copy animate-fade-in-up">
+                <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span><span data-i18n="hero_eyebrow">生成式 AI · 视觉智能</span></p>
+                <h1 id="hero-name">陈帅</h1>
+                <p class="hero-role" id="hero-title">AIGC Researcher</p>
+                <p class="hero-bio" id="hero-bio"></p>
+                <div class="hero-actions">
+                    <a href="cv_20260813.pdf" download class="button button-primary">
+                        <span data-i18n="btn_cv">下载简历</span>
+                        <svg class="icon" aria-hidden="true"><use href="#icon-download"></use></svg>
+                    </a>
+                    <div class="social-links" id="hero-social" aria-label="Social links"></div>
+                </div>
+                <div class="hero-stats" aria-label="Profile summary">
+                    <div class="stat-item">
+                        <strong id="stat-publications">00</strong>
+                        <span data-i18n="stat_publications">学术论文</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong id="stat-experience">00</strong>
+                        <span data-i18n="stat_experience">研究实习</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong id="stat-awards">00</strong>
+                        <span data-i18n="stat_awards">荣誉奖项</span>
                     </div>
                 </div>
-                <!-- 语言切换按钮 -->
-                <div class="flex items-center ml-4">
-                    <button id="lang-toggle" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100/80 text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 border border-slate-200 transition-all text-sm font-medium">
-                        <i class="fa-solid fa-globe"></i>
-                        <span id="lang-label">EN</span>
-                    </button>
-                </div>
             </div>
+
+            <figure class="hero-visual animate-fade-in-up animation-delay">
+                <div class="portrait-backdrop" aria-hidden="true"></div>
+                <div class="portrait-frame">
+                    <img id="hero-avatar" src="images/avatar.jpg" alt="陈帅的头像" fetchpriority="high">
+                    <span class="portrait-monogram" aria-hidden="true">SC</span>
+                </div>
+                <figcaption>
+                    <span data-i18n="portrait_caption">让机器理解，也让机器想象。</span>
+                    <span class="portrait-year" id="portrait-year">2026</span>
+                </figcaption>
+            </figure>
+        </section>
+
+        <section class="research-strip reveal" aria-labelledby="research-title">
+            <div class="research-intro">
+                <p class="eyebrow eyebrow-light" data-i18n="focus_eyebrow">RESEARCH FOCUS</p>
+                <h2 id="research-title" data-i18n="focus_title">探索视觉智能的边界</h2>
+            </div>
+            <div class="research-grid">
+                <article class="research-item">
+                    <span>01</span>
+                    <h3 data-i18n="focus_multimodal">多模态生成与理解</h3>
+                    <p data-i18n="focus_multimodal_sub">Multimodal Generation & Understanding</p>
+                </article>
+                <article class="research-item">
+                    <span>02</span>
+                    <h3 data-i18n="focus_video">视频生成</h3>
+                    <p data-i18n="focus_video_sub">Video Generation</p>
+                </article>
+                <article class="research-item">
+                    <span>03</span>
+                    <h3 data-i18n="focus_world">世界模型</h3>
+                    <p data-i18n="focus_world_sub">World Models</p>
+                </article>
+            </div>
+        </section>
+
+        <div class="content-sections">
+            <section id="education" class="content-section reveal" aria-labelledby="education-title">
+                <header class="section-header">
+                    <p class="section-kicker"><span>01</span> Education</p>
+                    <h2 id="education-title" data-i18n="title_education">教育背景</h2>
+                    <p class="section-note" data-i18n="note_education">求学经历与研究训练</p>
+                </header>
+                <div class="record-list" id="education-list"></div>
+            </section>
+
+            <section id="experience" class="content-section reveal" aria-labelledby="experience-title">
+                <header class="section-header">
+                    <p class="section-kicker"><span>02</span> Experience</p>
+                    <h2 id="experience-title" data-i18n="title_experience">工作经历</h2>
+                    <p class="section-note" data-i18n="note_experience">在真实问题中打磨研究</p>
+                </header>
+                <div class="record-list" id="experience-list"></div>
+            </section>
+
+            <section id="publications" class="content-section reveal" aria-labelledby="publications-title">
+                <header class="section-header">
+                    <p class="section-kicker"><span>03</span> Publications</p>
+                    <h2 id="publications-title" data-i18n="title_publications">学术研究</h2>
+                    <p class="section-note" data-i18n="note_publications">论文、研究与公开成果</p>
+                </header>
+                <div class="publication-list" id="publications-list"></div>
+            </section>
+
+            <section id="awards" class="content-section reveal" aria-labelledby="awards-title">
+                <header class="section-header">
+                    <p class="section-kicker"><span>04</span> Honors & Awards</p>
+                    <h2 id="awards-title" data-i18n="title_awards">个人荣誉</h2>
+                    <p class="section-note" data-i18n="note_awards">一路走来的小小里程碑</p>
+                </header>
+                <div class="awards-grid" id="awards-list"></div>
+            </section>
         </div>
-    </nav>
-
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        
-        <!-- About Section (关于我) -->
-        <section id="about" class="mb-24 pt-12 animate-fade-in-up">
-            <div class="bg-white/60 backdrop-blur-sm rounded-3xl p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100/60">
-                <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
-                    <!-- 头像区域 -->
-                    <div class="relative group flex-shrink-0">
-                        <div class="avatar-ring absolute -inset-1 rounded-full opacity-70 group-hover:opacity-100 group-hover:saturate-150 group-hover:brightness-110 transition-all duration-500"></div>
-                        <div class="absolute -inset-2 rounded-full bg-indigo-500/10 blur-md group-hover:bg-indigo-500/25 group-hover:-inset-3 transition-all duration-500"></div>
-                        <div class="relative w-32 h-32 md:w-36 md:h-36 bg-slate-100 rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-[0_18px_45px_-12px_rgba(99,102,241,0.45)] transition-shadow duration-500">
-                            <img id="hero-avatar" src="images/avatar.jpg" alt="Avatar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
-                        </div>
-                    </div>
-                    
-                    <!-- 个人信息区域 -->
-                    <div class="flex-1 text-center md:text-left pt-2">
-                        <h1 class="font-display text-3xl md:text-4xl font-bold text-slate-900 tracking-tight" id="hero-name">姓名</h1>
-                        <div class="mt-3 text-center md:text-left">
-                            <p class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-indigo-50/80 border border-indigo-100/80 text-indigo-600 text-sm font-semibold tracking-wide">
-                                <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
-                                <span id="hero-title">头衔 / 职位</span>
-                            </p>
-                        </div>
-                        <p class="mt-4 text-sm md:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto md:mx-0 font-light" id="hero-bio">
-                            个人简介内容...
-                        </p>
-                        
-                        <!-- 社交链接 + 简历下载 -->
-                        <div class="mt-6 flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-3">
-                            <div class="flex justify-center md:justify-start space-x-3" id="hero-social">
-                                <!-- 动态注入社交链接 -->
-                            </div>
-                            <a href="cv_20260813.pdf" download class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-600 text-white text-sm font-semibold shadow-sm hover:bg-indigo-700 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
-                                <i class="fa-solid fa-file-arrow-down"></i>
-                                <span data-i18n="btn_cv">下载简历</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education Section (教育背景) -->
-        <section id="education" class="mb-24 reveal">
-            <header class="mb-8 flex items-end gap-4">
-                <span class="font-display text-3xl md:text-4xl font-medium text-indigo-200/90 leading-none select-none" aria-hidden="true">01</span>
-                <div class="pb-1.5">
-                    <h2 class="font-display text-xl md:text-2xl font-bold text-slate-900 tracking-tight"><span data-i18n="title_education">教育背景</span></h2>
-                    <p class="text-[0.6rem] font-semibold tracking-[0.3em] uppercase text-slate-400 mt-1">Education</p>
-                </div>
-                <div class="flex-1 h-px bg-gradient-to-r from-slate-300/80 via-slate-200/50 to-transparent mb-4"></div>
-            </header>
-            
-            <div class="space-y-8 pl-4 border-l-2 border-indigo-100 ml-3" id="education-list">
-                <!-- 动态注入教育背景 -->
-            </div>
-        </section>
-
-        <!-- Experience Section (工作经历) -->
-        <section id="experience" class="mb-24 reveal">
-            <header class="mb-8 flex items-end gap-4">
-                <span class="font-display text-3xl md:text-4xl font-medium text-indigo-200/90 leading-none select-none" aria-hidden="true">02</span>
-                <div class="pb-1.5">
-                    <h2 class="font-display text-xl md:text-2xl font-bold text-slate-900 tracking-tight"><span data-i18n="title_experience">工作经历</span></h2>
-                    <p class="text-[0.6rem] font-semibold tracking-[0.3em] uppercase text-slate-400 mt-1">Experience</p>
-                </div>
-                <div class="flex-1 h-px bg-gradient-to-r from-slate-300/80 via-slate-200/50 to-transparent mb-4"></div>
-            </header>
-            <!-- 单列左对齐时间轴 -->
-            <div class="space-y-8 pl-4 border-l-2 border-indigo-100 ml-3 relative" id="experience-list">
-                <!-- 动态注入工作经历 -->
-            </div>
-        </section>
-
-        <!-- Publications & Patents Section (论文&专利) -->
-        <section id="publications" class="mb-24 reveal">
-            <header class="mb-8 flex items-end gap-4">
-                <span class="font-display text-3xl md:text-4xl font-medium text-indigo-200/90 leading-none select-none" aria-hidden="true">03</span>
-                <div class="pb-1.5">
-                    <h2 class="font-display text-xl md:text-2xl font-bold text-slate-900 tracking-tight"><span data-i18n="title_publications">论文&专利</span></h2>
-                    <p class="text-[0.6rem] font-semibold tracking-[0.3em] uppercase text-slate-400 mt-1">Publications</p>
-                </div>
-                <div class="flex-1 h-px bg-gradient-to-r from-slate-300/80 via-slate-200/50 to-transparent mb-4"></div>
-            </header>
-            
-            <div class="space-y-6" id="publications-list">
-                <!-- 动态注入论文 -->
-            </div>
-        </section>
-
-        <!-- Awards Section (个人荣誉) -->
-        <section id="awards" class="mb-24 reveal">
-            <header class="mb-8 flex items-end gap-4">
-                <span class="font-display text-3xl md:text-4xl font-medium text-indigo-200/90 leading-none select-none" aria-hidden="true">04</span>
-                <div class="pb-1.5">
-                    <h2 class="font-display text-xl md:text-2xl font-bold text-slate-900 tracking-tight"><span data-i18n="title_awards">个人荣誉</span></h2>
-                    <p class="text-[0.6rem] font-semibold tracking-[0.3em] uppercase text-slate-400 mt-1">Honors & Awards</p>
-                </div>
-                <div class="flex-1 h-px bg-gradient-to-r from-slate-300/80 via-slate-200/50 to-transparent mb-4"></div>
-            </header>
-            
-            <!-- 横向滚动容器及其左右感应区 -->
-            <div class="relative group/scroll">
-                <!-- 左侧感应区 -->
-                <div id="scroll-left-zone" class="absolute left-0 top-0 bottom-6 w-16 bg-gradient-to-r from-slate-50 to-transparent z-10 opacity-0 group-hover/scroll:opacity-100 transition-opacity duration-300 pointer-events-auto flex items-center justify-start pl-2 hidden md:flex">
-                    <div class="w-8 h-8 rounded-full bg-white/80 shadow-md flex items-center justify-center text-slate-400 hover:text-indigo-600 hover:bg-white transition-all backdrop-blur-sm cursor-pointer">
-                        <i class="fa-solid fa-chevron-left pointer-events-none"></i>
-                    </div>
-                </div>
-                
-                <div class="flex overflow-x-auto gap-6 pb-6 scroll-smooth hide-scrollbar cursor-grab active:cursor-grabbing relative z-0" id="awards-list">
-                    <!-- 动态注入个人荣誉 -->
-                </div>
-
-                <!-- 右侧感应区 -->
-                <div id="scroll-right-zone" class="absolute right-0 top-0 bottom-6 w-16 bg-gradient-to-l from-slate-50 to-transparent z-10 opacity-0 group-hover/scroll:opacity-100 transition-opacity duration-300 pointer-events-auto flex items-center justify-end pr-2 hidden md:flex">
-                    <div class="w-8 h-8 rounded-full bg-white/80 shadow-md flex items-center justify-center text-slate-400 hover:text-indigo-600 hover:bg-white transition-all backdrop-blur-sm cursor-pointer">
-                        <i class="fa-solid fa-chevron-right pointer-events-none"></i>
-                    </div>
-                </div>
-            </div>
-        </section>
-
     </main>
 
-    <!-- 页脚 -->
-    <footer class="border-t border-slate-200/70 bg-white/60 backdrop-blur-sm py-10">
-        <div class="max-w-6xl mx-auto px-4 flex flex-col items-center gap-5">
-            <div class="flex items-center space-x-2" id="footer-social">
-                <!-- 动态注入社交链接 -->
+    <footer class="site-footer">
+        <div class="footer-orbit" aria-hidden="true"></div>
+        <div class="footer-inner">
+            <div class="footer-main">
+                <div>
+                    <p class="eyebrow eyebrow-light" data-i18n="footer_eyebrow">KEEP IN TOUCH</p>
+                    <h2 id="footer-name">陈帅</h2>
+                    <p class="footer-message" data-i18n="footer_message">欢迎交流研究，也欢迎聊聊关于视觉智能的任何想法。</p>
+                </div>
+                <div class="footer-social" id="footer-social" aria-label="Social links"></div>
             </div>
-            <div class="w-20 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
-            <p class="text-sm text-slate-400">&copy; <span id="year">2026</span> <span id="footer-name">Name</span>. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2026</span> <span id="footer-copyright-name">Shuai Chen</span>. All rights reserved.</p>
+                <a class="back-to-top" href="#about">
+                    <span data-i18n="back_top">回到顶部</span>
+                    <svg class="icon" aria-hidden="true"><use href="#icon-arrow-up"></use></svg>
+                </a>
+            </div>
         </div>
     </footer>
 
-    <!-- 引入数据和主逻辑 -->
+    <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <symbol id="icon-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path></symbol>
+        <symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3"></path></symbol>
+        <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></symbol>
+        <symbol id="icon-github" viewBox="0 0 24 24"><path d="M15 22v-3.9c.04-1-.35-1.96-1.1-2.6 3.6-.4 7.1-1.77 7.1-7A5.4 5.4 0 0 0 19.55 4.7 5.04 5.04 0 0 0 19.4 1S18.15.63 15 2.48a13.4 13.4 0 0 0-7 0C4.85.63 3.6 1 3.6 1a5.04 5.04 0 0 0-.15 3.7A5.4 5.4 0 0 0 2 8.5c0 5.22 3.5 6.6 7.1 7A3.73 3.73 0 0 0 8 18.1V22"></path><path d="M8 19c-3 .92-3-1.5-4-2"></path></symbol>
+        <symbol id="icon-scholar" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5L2 9Z"></path><path d="M6 11.5V16c3 2.3 9 2.3 12 0v-4.5M22 9v6"></path></symbol>
+        <symbol id="icon-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"></path></symbol>
+        <symbol id="icon-location" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></symbol>
+        <symbol id="icon-bookmark" viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4V3Z"></path></symbol>
+        <symbol id="icon-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 2.5 2.5L16 9"></path></symbol>
+        <symbol id="icon-hourglass" viewBox="0 0 24 24"><path d="M6 3h12M6 21h12M7 3c0 5 5 5 5 9s-5 4-5 9M17 3c0 5-5 5-5 9s5 4 5 9"></path></symbol>
+        <symbol id="icon-file" viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6V2Z"></path><path d="M14 2v5h5M9 13h6M9 17h4"></path></symbol>
+        <symbol id="icon-code" viewBox="0 0 24 24"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 4l-4 16"></path></symbol>
+        <symbol id="icon-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"></circle><path d="m8 14-1 8 5-3 5 3-1-8M9.5 9 11 10.5 14 7.5"></path></symbol>
+        <symbol id="icon-arrow-up" viewBox="0 0 24 24"><path d="M12 20V4m0 0-5 5m5-5 5 5"></path></symbol>
+    </svg>
+
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
 </body>
